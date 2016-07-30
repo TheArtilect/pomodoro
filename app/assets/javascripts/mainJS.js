@@ -2,6 +2,23 @@
 function startPage(){
 
 
+  
+  function customAlert() {
+    var winH = ($(window).height()).toString();
+    var diagOverlay = $("#diag-overlay");
+    var diagBox = $("#diag-box");
+    diagOverlay.css("display", "block");
+    diagOverlay.css("height", winH + "px");
+    diagBox.css("margin-top", "150px");
+    diagBox.css('display', "block");
+    $("#diag-box-head").text("END OF BREAK");
+    $("#restart").on('click', function() {
+      original();
+    })
+    $("#diag-box-body").text("Let's Get Back To Work!");
+  };
+  
+
   function timerStart() {
     setInterval(function() {
       secTimer()
@@ -108,9 +125,7 @@ function startPage(){
     $("#displayMin-break").text(minBreak.toString(10));
     if ((minBreak == 0) && (secBreak == 0)) {
       $("#displaySec-break").text(secBreak.toString(10));
-      original();
-      alert("Let's Get Back To Work!");
-      location.reload();
+      customAlert();
     };
   }
   
@@ -172,8 +187,13 @@ function startPage(){
     $("#start").show();
     $("#pause").show();
     $("body").css("color", "white");
-    $("body").css("background-color", "#000d1a")
+    $("body").css("background-color", "#000d1a");
+    $("#diag-overlay").css("display", "none");
+    $("#diag-box").css("display", "none")
   };
+  
+  
+
 }
 
 $(document).ready(startPage);
