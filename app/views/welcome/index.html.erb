@@ -1,0 +1,60 @@
+<div class="container-fluid col-md-8 col-md-offset-2 all">
+
+  <h1>Productivity Timer</h1>
+
+  <div id="beginning">
+    <button id="start" class="movement">Start</button>
+    <button id='pause' class="movement">Pause</button>
+    <button id='reset' class="movement">Reset</button>
+  </div>
+
+
+  <div id="display" class="row col-md-4 col-md-offset-4">
+    <div>
+      <h3 id="displayTitle">Your break begins in:</h3>
+    </div>
+
+
+    <div id="timer-line">
+      <div class="timer" id="displayMin"></div>
+      <div class="timer">minutes</div>
+      <div class="timer" id="displaySec"></div>
+      <div class="timer">seconds</div>
+    </div>
+
+    <center>
+      <div id="time">
+        <button id="subTimer" class="timer-buttons time">-</button>
+        <button id="addTimer" class="timer-buttons time">+</button>
+      </div>
+    </center>
+  </div>
+
+
+  <div id="break-display" class="row col-md-4 col-md-offset-4" style="display:none">
+    <div>
+      <h3>Your break ends in:</h3>
+    </div>
+
+    <div id="break-line">
+      <div class="break" id="displayMin-break"></div>
+      <div class="break">minutes</div><!--By Ian Agpawa -->
+      <div class="break" id="displaySec-break"></div>
+      <div class="break">seconds</div>
+    </div>
+
+    <center>
+      <div id='break'>
+        <button id="subBreak" class="timer-buttons break-b">-</button>
+        <button id="addBreak" class="timer-buttons break-b">+</button>
+      </div>
+    </center>
+
+  </div>
+
+
+  <div>
+    
+    <p id="motivation"></p>
+  </div>
+</div>
