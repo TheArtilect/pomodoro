@@ -2,7 +2,7 @@
 function startPage(){
 
 
-  
+
   function customAlert() {
     var winH = ($(window).height()).toString();
     var diagOverlay = $("#diag-overlay");
@@ -17,7 +17,7 @@ function startPage(){
     })
     $("#diag-box-body").text("Let's Get Back To Work!");
   };
-  
+
 
   function timerStart() {
     setInterval(function() {
@@ -28,14 +28,14 @@ function startPage(){
       breakStart();
     }, 60000);
   }
-  
+
   var min = 24;
   var sec = 60;
   var operator = "";
-  
+
   $("#displayMin").text((min + 1).toString(10));
   $("#displaySec").text('00');
-  
+
   function secTimer() {
     sec -= 1;
     if (sec <= 0) {
@@ -49,7 +49,7 @@ function startPage(){
       breakStart();
     };
   }
-  
+
   function minTimer() {
     min -= 1;
     sec = 60;
@@ -66,10 +66,10 @@ function startPage(){
       breakStart();
     };
   }
-  
+
   $(".timer-buttons").click(function() {
     operator = $(this).attr("id");
-  
+
     if (operator === "addTimer") {
       min += 1;
       if (sec == 60) {
@@ -90,14 +90,14 @@ function startPage(){
         $("#displaySec").text(sec.toString(10));
         $("#displayMin").text("0");
       }
-  
+
     };
-  
+
     if (operator === "addBreak") {
       minBreak += 1;
       $("#displayMin-break").text(minBreak.toString(10));
     };
-  
+
     if (operator === "subBreak") {
       minBreak -= 1;
       $("#displayMin-break").text((minBreak + 1).toString(10));
@@ -106,16 +106,16 @@ function startPage(){
         minSec = 60;
         $("#displaySec-break").text(secBreak.toString(10));
       }
-  
+
     };
   });
-  
+
   var minBreak = 4;
   var secBreak = 60;
-  
+
   $("#displayMin-break").text((minBreak + 1).toString(10));
   $("#displaySec-break").text('00');
-  
+
   function secBreakTimer() {
     secBreak -= 1;
     if (secBreak <= 0) {
@@ -128,7 +128,7 @@ function startPage(){
       customAlert();
     };
   }
-  
+
   function minBreakTimer() {
     minBreak -= 1;
     secBreak = 60;
@@ -137,7 +137,7 @@ function startPage(){
       secBreak = 0;
     };
   };
-  
+
   function breakStart() {
     $("body").css("background-color", "#CC9900");
     secondsBreak = setInterval(secBreakTimer, 1000);
@@ -147,30 +147,31 @@ function startPage(){
     $("#pause").css("display", "none");
     $("#display").css('display', "none");
     $("body").css("color", "black");
+    $("#link").css("color", "#232323");
     $("#break-display").show();
-  
+
   }
-  
+
   var seconds;
   var minutes;
   var secondsBreak;
   var minutesBreak;
-  
+
   $("#start").click(function() {
     seconds = setInterval(secTimer, 1000);
     minutes = setInterval(minTimer, 60000);
-  
+
   });
-  
+
   $("#pause").click(function() {
     clearInterval(seconds);
     clearInterval(minutes);
   })
-  
+
   $("#reset").click(function() {
     original();
   });
-  
+
   function original() {
     clearInterval(seconds);
     clearInterval(minutes);
@@ -189,10 +190,11 @@ function startPage(){
     $("body").css("color", "white");
     $("body").css("background-color", "#000d1a");
     $("#diag-overlay").css("display", "none");
-    $("#diag-box").css("display", "none")
+    $("#diag-box").css("display", "none");
+    $("#link").css("color", "#8D8D8D");
   };
-  
-  
+
+
 
 }
 

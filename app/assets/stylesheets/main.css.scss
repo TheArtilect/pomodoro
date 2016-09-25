@@ -7,7 +7,7 @@ body {
   color: white;
 }
 
-h1, 
+h1,
 h3
 {
   text-align: center;
@@ -17,6 +17,16 @@ h1{
   font-size: 60px;
   margin-bottom: 30px;
 }
+
+a {
+  color: #8D8D8D;
+
+}
+
+a:hover {
+  color: grey;
+}
+
 .all{
   margin-top: 100px;
 }
@@ -33,7 +43,7 @@ h1{
   background: #A8A8A8;
   width: 100%;
   z-index: 10;
-  
+
 }
 
 #diag-box {
@@ -73,7 +83,7 @@ h1{
   text-align: right;
   color: white;
   font-weight: bold;
-  
+
 }
 
 #restart{
@@ -118,6 +128,7 @@ h1{
 
 #beginning {
   text-align: center;
+  margin-top: 4vh;
 }
 
 .movement {
